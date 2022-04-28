@@ -16,7 +16,7 @@ func main() {
 
 // getInput return string from StdIn
 func getInput() string {
-	scanner := bufio.NewScanner(os.Stdin)
-	scanner.Scan()
-	return scanner.Text()
+	scanner := bufio.NewReader(os.Stdin)
+	txt, _, _ := scanner.ReadLine()
+	return string(txt)
 }
