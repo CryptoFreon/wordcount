@@ -1,9 +1,8 @@
 package main
 
 import (
-	"bufio"
+	"flag"
 	"fmt"
-	"os"
 	"strings"
 )
 
@@ -16,7 +15,7 @@ func main() {
 
 // getInput return string from StdIn
 func getInput() string {
-	scanner := bufio.NewReader(os.Stdin)
-	txt, _, _ := scanner.ReadLine()
+	flag.Parse()
+	txt := strings.Join(flag.Args(), "")
 	return string(txt)
 }
